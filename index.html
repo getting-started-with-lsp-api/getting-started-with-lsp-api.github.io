@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Getting Started With LSP API</title>
+</head>
+<body>
+  <h1>Getting Started With LSP API</h1>
+  <p>For detailed API documentation, refer to:
+<a href="https://raw.githubusercontent.com/krisvih32/API/refs/heads/main/docs.txt">Detailed API docs</a></p>
+  <h2>Basic Commands</h2>
+  <h3>Commonly used commands</h3>
+  <p>These are the most commonly used commands for the FLL coding:
+    <ul>
+      <li>move.forward_for</li>
+      <li>move.backward_for</li>
+      <li>move.forward_to_red_border</li>
+      <li>move.forward_to_blue_border</li>
+      <li>move.right_motor_left_for</li>
+      <li>move.right_motor_right_for</li>
+      <li>move.right_motor_left_for</li>
+      <li>move.right_motor_right_for</li>
+      <li>front_arm.run_for_degrees</li>
+      <li>breakpoint</li>
+    </ul>
+  </p>
+  <p>
+    Refer to the below sections to understand the above commands
+  </p>
+  <h3>How to move forward/backward for specific cm or inch</h3>
+  <p>To move forward/backward 10 cm at a speed of 300:
+  <pre><code>
+      move.forward_for(10, "cm", 300, 300)
+      move.backward_for(10, "cm", 300, 300)
+  </code></pre>
+  </p>
+  <p>To move forward/backward 10 inch at a speed of 300:</p>
+  <pre><code>
+    move.forward_for(10, "in", 300, 300)
+    move.backward_for(10, "in", 300, 300)
+  </code></pre>
+  </p>
+  <p>
+  move.backward_for is similar to move.forward_for but in the opposite direction.
+  <style>.warning-emoji {
+  display: inline-block;
+  font-size: 1em;
+  background-color: #f7d51d;
+  color: #000000;
+  padding: 0.1em;
+  border-radius: 0.2em;
+  line-height: 1;
+}</style>
+  <span class="warning-emoji" role="img" aria-label="Warning">&#9888;</span><strong><em>Note that the allowed speed is 0-650, so 300 is ~50% speed.</em></strong>
+  </p>
+  <h4>How to move forward/backward to red home border at speed of 300</h4>
+  <p>
+  To move forward/backward to red border at a speed of 300:
+  <pre><code>
+     move.forward_to_red_border(300, 300)
+     move.backward_to_red_border(300, 300)
+  </code></pre>
+  </p>
+  <h4>How to move forward/backward to blue home border at speed of 300</h4>
+  <p>
+    To move forward/backward to blue border at a speed of 300:
+    <pre><code>
+       move.forward_to_blue_border(300, 300)
+       move.backward_to_blue_border(300, 300)
+    </code></pre>
+  </p>
+  <h4>How to turn to a specific yaw angle</h4>
+  <strong>Pre-Steps:</strong>
+  <ul>
+    <li>Decide what yaw angle you need to move to. (You need to check hub properties page by clicking the hub icon in the top-left to find this out).</li>
+    <li>Decide whether you want to move the left or right wheel/motor.</li>
+  </ul>
+  
+  To turn the right motor in the left direction to achieve a yaw angle of 150, at a speed of 100:
+  ```
+    move.right_motor_left_for(100, 150)
+  ```
+  :warning: **Note that you want to use a slow speed(max 100) for turns to have a higher accuracy.**
+  
+  To turn the right motor in the right direction to achieve a yaw angle of 50, at a speed of 80:
+  ```
+    move.right_motor_right_for(80, 50)
+  ```
+  
+  To turn the left motor in the left direction to achieve a yaw angle of 150, at a speed of 100:
+  ```
+    move.left_motor_left_for(100, 150)
+  ```
+  
+  To turn the left motor in the right direction to achieve a yaw angle of 50, at a speed of 80:
+  ```
+    move.left_motor_right_for(80, 50)
+  ```
+  
+  ### How to's for turning the robot arms
+  #### How to turn the front robot arm
+  To turn the front robot arm by 140 degrees clockwise at a speed of 100:
+  ```
+  front_arm.run_for_degrees(140, 100)
+  ```
+  :warning: **Note that you should use a slow speed(max 100) for better accuracy.**
+  
+  To turn the front robot arm by 140 degrees counter-clockwise at a speed of 100:
+  ```
+  front_arm.run_for_degrees(140, -100)
+  ```
+  Note that since we are using geared motors, clockwise on the motor turns into counter-clockwise movement of the arm.
+  
+  ### How to's for debugging
+  
+  #### How to set a breakpoint
+  To set a breakpoint activated by the left button:
+  ```
+  breakpoint(button=button.LEFT)
+  ```
+  If you add a breakpoint, the robot will pause execution at that point until you press the Left Button. This is very useful for debugging.
+  
+  #### How to set the hub power button color
+  To set the hub power button to the color RED:
+  ```
+  ```
+  This is useful for debugging to figure out which step in the code you are at.
+  
+  ## Advanced commands
+  - print
+  
+  ### How to's for debugging
+  #### How to print a message to the Spike Prime Console
+  To print a message "Step 1" to the Spike Prime Console:
+  ```
+  print("Step 1")
+  ```
+  This is useful for debugging to figure out which step in the code you are at.
+  
+  ## How to go to the end of the file without scrolling
+  To go to the end of the file without scrolling:
+  
+  ```
+  Press Ctrl + G
+  ```
+  A message such as this will be displayed:
+  ```
+  Current Line: 1, Character: 38. Type a line number between 1 and 321 to navigate to.
+  ```
+  Note the highest line number, 321 in this case and type that.
+  <h3>How to's for moving the robot</h3>
+</body>
+</html>
