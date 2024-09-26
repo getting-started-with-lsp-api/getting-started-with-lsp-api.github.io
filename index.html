@@ -68,19 +68,20 @@
        move.backward_to_blue_border(300, 300)
     </code></pre>
   </p>
+  <p>
   <h4>How to turn to a specific yaw angle</h4>
+  :warning: **Note that you want to use a slow speed(max 100) for turns to have a higher accuracy.**
   <strong>Pre-Steps:</strong>
   <ul>
     <li>Decide what yaw angle you need to move to. (You need to check hub properties page by clicking the hub icon in the top-left to find this out).</li>
     <li>Decide whether you want to move the left or right wheel/motor.</li>
   </ul>
-  
+  <p>
   To turn the right motor in the left direction to achieve a yaw angle of 150, at a speed of 100:
-  ```
+  <pre><code>
     move.right_motor_left_for(100, 150)
-  ```
-  :warning: **Note that you want to use a slow speed(max 100) for turns to have a higher accuracy.**
-  
+  </code></pre>
+  </p>
   To turn the right motor in the right direction to achieve a yaw angle of 50, at a speed of 80:
   ```
     move.right_motor_right_for(80, 50)
